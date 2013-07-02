@@ -1,0 +1,16 @@
+<div class ="container">
+	<div class ="blogblox">
+		<form id="newblog" method = "POST" action = "/newblog">
+			<input type="text" name="user[title]" placeholder="Title" value = "<%= @title %>">
+			<br>
+			<br>
+			<input type="text" name="user[tags]" placeholder="tags?"> 
+			<br>
+			<br>
+			<TEXTAREA NAME="user[blog]" ROWS="30" COLS="50"
+			placeholder="Something inspiring about writing shtuf"
+			value = "<%= @blog %>" ></TEXTAREA>
+		<input type="submit" value="Post">
+	</form>
+</div>
+</div>

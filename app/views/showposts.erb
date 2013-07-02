@@ -1,0 +1,14 @@
+<div id="blog">
+
+	<h1><%= @blog[:title] %></h1>
+	<p><%= @blog[:blog] %></p>
+	<h4><%= @tag[:tag_name] %></h4>
+	<div class = "remove">
+		<a href = "/remove/<%= @blog.id %>" class = "remove"> Remove </a>
+	</div>
+
+	<div class = "edit">
+		<a href = "/edit/<%= @blog.id %>"> Edit </a>
+	</div>
+
+</div>

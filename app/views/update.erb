@@ -1,0 +1,16 @@
+	<br>
+	<br>
+	<div class ="edit_box">
+		<form id="newblog" method = "post" action = "/edit_post">
+			<input id="post" type = "hidden" value="<%= @post[:id] %>">
+			<input type="text" name="update[title]" placeholder="Title" value = "<%= @post[:title] %>" >
+			<br>
+			<br>
+			<input type="text" name="update[tags]" placeholder="tags?"> 
+			<br>
+			<br>
+			<TEXTAREA NAME="update[blog]" ROWS="10" COLS="50"
+			placeholder="Something inspiring about writing shtuf" value = "<%= @post[:blog] %>"></TEXTAREA>
+		<input class = "send_edit" type="submit" value="Edit">
+	</form>
+</div>

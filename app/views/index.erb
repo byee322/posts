@@ -1,0 +1,43 @@
+
+
+	<div id = "top-nav">
+		<h2>What up?</h2>
+		<a href = '/newblog'> Want to write a new blog post?</a>
+	</div>
+
+<div class="container">
+	<h2>Here are some of the Blogs!</h2>
+
+	<div class = "posts">
+		<form id="blogs" method="get" action="/posts">
+			<select name="posts">
+				<% @posts.each do |posts| %>
+				<option value="<%=posts.title%>">
+					<%= posts.title %> 
+				</option>
+				<% end %>
+			</select>
+			<input type="submit" value="Show">
+		</form>
+	</div>
+
+		<h2>Here are some of the Tags!</h2>
+
+	<div class='tag_container'>
+			<form id="tags" method="get" action="/tags">
+			<select name="tags">
+				<% @tags.each do |tags| %>
+				<option value="<%=tags.tag_name%>">
+					<%= tags.tag_name %> 
+				</option>
+				<% end %>
+			</select>
+			<input type="submit" value="Show">
+		</form>
+	</div>
+
+	<div id="results">
+	</div>
+		<div id="edit">
+	</div>
+</div>
