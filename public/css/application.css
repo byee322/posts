@@ -31,3 +31,12 @@ th {
 	padding-top: 5px;
 	float:left;
 }
+
+.tag {
+	border-right: 2px solid yellow;
+	padding-right: 0.33em;
+}
+
+.tag:last-child {
+	border-right: 0;
+}

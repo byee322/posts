@@ -1,4 +1,14 @@
 $(document).ready(function() {
+
+	// TODO: fix this for delete links!
+	$('.delete-link').on("click", function(e) {
+		e.preventDefault();
+		$.ajax({ type: "delete", url: $(this).attr('href') })
+		.done(function(response) {
+			console.log("deleted!"); // or update the DOM as appropriate
+		});
+	});
+
 	$('#tags').on('submit', function(e){
 		e.preventDefault();
 		$.ajax({
