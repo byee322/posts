@@ -2,6 +2,7 @@
 
 	<h1><%= @post[:title] %></h1>
 	<p><%= @post[:blog] %></p>
+	
 	<% if @post.tags %>
 	<h4>
 		<% @post.tags.each do |tag| %>
@@ -9,6 +10,7 @@
 		<% end %>
 	</h4>
 	<% end %>
+
 	<div class = "remove">
 		<a href = "/remove/<%= @post.id %>" class = "remove"> Remove </a>
 	</div>

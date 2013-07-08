@@ -18,10 +18,6 @@
 
 
 #------------------
-
-
-
-
 get '/post' do
 	@post = Post.find_by_title(params[:posts])
 	# tags = PostsAndTag.find_by_id(@blog.id)
@@ -53,8 +49,6 @@ end
 
 get '/edit/:id' do |id|
 	@post = Post.find(id)
-	# p post.tag
-	# @tag = Tag.find_by_id(post)
 	erb :update, { :layout => false }
 end
 
@@ -70,9 +64,10 @@ end
 
 post "/edit_post/:id" do
 	post = Post.find(params[:id])
-	title = params[:update][:title]
-	blog = params[:update][:blog]
-	post.update_attributes({title: title, blog: blog})
+	title = params[:post][:title]
+	blog = params[:post][:body]
+	post.update_attributes(title: title, blog: blog)
+	redirect "/"
 end
 
 

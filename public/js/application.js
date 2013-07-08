@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
 	// TODO: fix this for delete links!
-	$('.delete-link').on("click", function(e) {
-		e.preventDefault();
-		$.ajax({ type: "delete", url: $(this).attr('href') })
-		.done(function(response) {
-			console.log("deleted!"); // or update the DOM as appropriate
-		});
-	});
+	// $('.delete-link').on("click", function(e) {
+	// 	e.preventDefault();
+	// 	$.ajax({ type: "delete", url: $(this).attr('href') })
+	// 	.done(function(response) {
+	// 		console.log("deleted!"); // or update the DOM as appropriate
+	// 	});
+	// });
 
 	$('#tags').on('submit', function(e){
 		e.preventDefault();
@@ -16,7 +16,7 @@ $(document).ready(function() {
 			url: '/tags',
 			data: $(this).serialize()
 		}).done(function(data) {
-			$('#results').html(data);
+			$('#results').html(data).toggle('fast');
 		});
 	});
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
 			url: '/post',
 			data: $(this).serialize()
 		}).done(function(data){
-			$('#results').html(data)
+			$('#blog_results').html(data).toggle('fast');
 		});
 	});
 
@@ -35,26 +35,26 @@ $(document).ready(function() {
 		alert("Are you sure?");
 	});
 
-		$(document).on('click','.edit',function(e){
-			e.preventDefault();
-			$.ajax({
-				type: 'get',
-				url: $(this).find("a").attr("href"),
-				data: $(this).serialize()
-			}).done(function(data){
-				$("#edit").html(data)
-			});
-		});
+		// $(document).on('click','.edit',function(e){
+		// 	e.preventDefault();
+		// 	$.ajax({
+		// 		type: 'get',
+		// 		url: $(this).find("a").attr("href"),
+		// 		data: $(this).serialize()
+		// 	}).done(function(data){
+		// 		$("#edit").html(data)
+		// 	});
+		// });
 
-		$(document).on('click','.send_edit',function(e){
-			e.preventDefault();
-			$.ajax({
-				type: 'post',
-				url: "/edit_post/" + $('#post').val(),
-				data: $('form#newblog').serialize()
-			}).done(function(data){
-			});
-		});
+		// $(document).on('click','.send_edit',function(e){
+		// 	e.preventDefault();
+		// 	$.ajax({
+		// 		type: 'get',
+		// 		url: "/edit_post/" + $('#post').val(),
+		// 		data: $('form#newblog').serialize()
+		// 	}).done(function(data){
+		// 	});
+		// });
 	});
 
 
