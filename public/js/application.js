@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	// TODO: fix this for delete links!
+	// // TODO: fix this for delete links!
 	// $('.delete-link').on("click", function(e) {
 	// 	e.preventDefault();
 	// 	$.ajax({ type: "delete", url: $(this).attr('href') })

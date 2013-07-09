@@ -25,9 +25,9 @@ get '/post' do
 	erb :showposts, { :layout => false }
 end
 
-get '/newblog' do
-	erb :newblog
-end
+# get '/newblog' do
+	# erb :newblog
+# end
 
 post '/newblog' do
 	@title = params[:user][:title]
@@ -40,8 +40,6 @@ post '/newblog' do
 		newblog
 		@tags.each do |t|
 			newblog.tags << Tag.find_or_create_by_tag_name(t.downcase.strip)
-			# new_tag = 
-			# new_tag.posts << newblog
 		end
 		redirect '/'
 	end
